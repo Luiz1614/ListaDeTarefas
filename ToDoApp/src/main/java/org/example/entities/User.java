@@ -1,7 +1,9 @@
 package org.example.entities;
 
-public class User extends _BaseEntity{
+public class User extends _BaseEntity {
     private String name;
+
+    public User(){}
 
     public User(int id, String name) {
         super(id);
@@ -18,8 +20,10 @@ public class User extends _BaseEntity{
 
     @Override
     public String toString() {
-        return "User{" +
-                "name: " + name +
-                "} " + super.toString();
+        return """
+User{
+    name='$name',
+    super=${super.toString()}
+}""";
     }
 }

@@ -1,13 +1,15 @@
 package org.example.entities;
 
+import java.util.StringJoiner;
+
 public abstract class _BaseEntity {
     private int id;
+
+    public _BaseEntity(){}
 
     public _BaseEntity(int id) {
         this.id = id;
     }
-
-    public _BaseEntity(){}
 
     public int getId() {
         return id;
@@ -19,8 +21,8 @@ public abstract class _BaseEntity {
 
     @Override
     public String toString() {
-        return "_BaseEntity{" +
-                "id=" + id +
-                '}';
+        return new StringJoiner(", ", _BaseEntity.class.getSimpleName() + "[", "]")
+                .add("id=" + id)
+                .toString();
     }
 }

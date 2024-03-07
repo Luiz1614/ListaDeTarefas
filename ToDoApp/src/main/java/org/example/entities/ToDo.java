@@ -1,14 +1,16 @@
 package org.example.entities;
 
-public class ToDo extends _BaseEntity {
+import java.util.StringJoiner;
+
+public class Todo extends _BaseEntity {
     private String title;
     private String description;
     private boolean isDone;
 
-    public ToDo() {
+    public Todo() {
     }
 
-    public ToDo(int id, String title, String description, boolean isDone) {
+    public Todo(int id, String title, String description, boolean isDone) {
         super(id);
         this.title = title;
         this.description = description;
@@ -41,11 +43,10 @@ public class ToDo extends _BaseEntity {
 
     @Override
     public String toString() {
-        return "\r\n\r\nToDo{\r\n" +
-                super.toString() +
-                "\r\ntitle: " + title +
-                "\r\ndescription: " + description +
-                "\r\nisDone: " + isDone +
-                "} ";
+        return "Todo{" +
+                "title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", isDone=" + isDone +
+                "} " + super.toString();
     }
 }
